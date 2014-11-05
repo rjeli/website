@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>
+		eli riggs
+	</title>
+	<script src="//use.typekit.net/fma4oxr.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+	<link rel="stylesheet" type="text/css" href="static/index.css">
+</head>
+<body class="tk-courier-std">
+	<div class="sidebar">
+		<p><img src="static/me.jpeg"></p>
+		<p>hi, my name is eli riggs and this is my blog.</p>
+		<p>i enjoy backend, mostly in python</p>
+		<p><a href="http://www.github.com/eliriggs">github</a></p>
+	</div>
+	<div class="posts">
+
+{% for post in posts %}
+<p>{{ post.body|markdown }}</p>
+<hr>
+{% endfor %}
+
+	</div>
+</body>
+</html>
