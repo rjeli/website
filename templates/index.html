@@ -14,15 +14,15 @@
 		<p><a href="about">about me</a></p>
 		<p><a href="http://www.github.com/eliriggs">github</a></p>
 	</div>
-	{% block content %}
 	<div class="posts">
+	{% block content %}
 
 {% for post in posts %}
 <p>{{ post.body|markdown }}</p>
 <hr>
 {% endfor %}
 
-	</div>
 	{% endblock %}
+	</div>
 </body>
 </html>
