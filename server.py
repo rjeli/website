@@ -8,13 +8,6 @@ Misaka(app)
 @app.route('/')
 @app.route('/index')
 def index():
-    posts = [
-            {
-                'title': 'how i learned to dong',
-                'body': 'i used my donger'
-                },
-            ]
-
     posts = []
     for file in os.listdir("posts"):
         if not file.startswith('.') and file.endswith('.md'):
