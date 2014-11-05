@@ -28,4 +28,4 @@ def about():
 def css(filename):
     return app.send_static_file(filename)
 
-app.run(debug=True)
+app.run('104.131.163.52', 80, debug=True)
