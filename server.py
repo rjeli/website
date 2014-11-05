@@ -20,6 +20,10 @@ def index():
     return render_template('index.html',
                             posts=posts)
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/static/<filename>')
 def css(filename):
     return app.send_static_file(filename)

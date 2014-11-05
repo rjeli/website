@@ -11,9 +11,10 @@
 	<div class="sidebar">
 		<p><img src="static/me.jpeg"></p>
 		<p>hi, my name is eli riggs and this is my blog.</p>
-		<p>i enjoy backend, mostly in python</p>
+		<p><a href="about">about me</a></p>
 		<p><a href="http://www.github.com/eliriggs">github</a></p>
 	</div>
+	{% block content %}
 	<div class="posts">
 
 {% for post in posts %}
@@ -22,5 +23,6 @@
 {% endfor %}
 
 	</div>
+	{% endblock %}
 </body>
 </html>
