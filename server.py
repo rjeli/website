@@ -13,8 +13,8 @@ def index():
         if not file.startswith('.') and file.endswith('.md'):
             with open(os.path.join("posts", file)) as opened_file:
                 posts.append({
-                    'title': os.path.splitext(file)[0],
-                    'body': opened_file.read()
+                    'title': opened_file.readline(),
+                    'url': os.path.splitext(file)[0],
                     })
 
     return render_template('index.html',
@@ -28,4 +28,11 @@ def about():
 def css(filename):
     return app.send_static_file(filename)
 
-app.run('104.131.163.52', 80, debug=True)
+@app.route('/post/<url>')
+def post(url):
+    with open(os.path.join('posts', url + '.md')) as opened_file:
+        post_contents = opened_file.read()
+    return render_template('post.html',
+                            post_content=post_contents)
+
+app.run('0.0.0.0', 80, debug=True)

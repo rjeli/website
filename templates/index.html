@@ -5,22 +5,21 @@
 	</title>
 	<script src="//use.typekit.net/fma4oxr.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
-	<link rel="stylesheet" type="text/css" href="static/index.css">
+	<link rel="stylesheet" type="text/css" href="/static/index.css">
 </head>
 <body class="tk-courier-std">
 	<div class="sidebar">
-		<p><img src="static/me.jpeg"></p>
+		<p><img src="/static/me.jpeg"></p>
 		<p>hi, my name is eli riggs and this is my blog :)</p>
-		<p><a href="index">blog</a></p>
-		<p><a href="about">about me</a></p>
+		<p><a href="/index">blog</a></p>
+		<p><a href="/about">about me</a></p>
 		<p><a href="http://www.github.com/eliriggs">github</a></p>
 	</div>
 	<div class="posts">
 	{% block content %}
 
 {% for post in posts %}
-<p>{{ post.body|markdown }}</p>
-<hr>
+<p><a href="post/{{ post.url }}">{{ post.title|markdown }}</a></p>
 {% endfor %}
 
 	{% endblock %}
